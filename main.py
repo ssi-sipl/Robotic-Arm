@@ -95,7 +95,7 @@ time.sleep(2)
 #     time.sleep(1)
 
 while True:
-    kit.servo[12].angle = 60
+    kit.servo[12].angle = 0
     print("Servo 3 at ")
 
 
