@@ -27,7 +27,7 @@ def set_servo_angle(index, angle):
     print(f"Moved servo {index} (channel {channel}) to {angle}°")
 
 # Example usage
-set_servo_angle(1, 90)
+# set_servo_angle(1, 90)
 set_servo_angle(5, 45)  # Will move servo 5 and mirror 6
 
 # Optional: keep the program running
