@@ -1,0 +1,4 @@
+pip install RPi.GPIO
+pip3 install adafruit-circuitpython-pca9685
+pip3 install adafruit-blinka
+pip install adafruit-circuitpython-motor
