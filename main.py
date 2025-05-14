@@ -38,18 +38,18 @@ def set_max_limits(index, angle):
 
 # Example usage
 # set_servo_angle(1, 90)
-set_servo_angle(6, 70)  # Will move servo 5 and mirror 6
+set_servo_angle(5, 0)  # Will move servo 5 and mirror 6
 
 # Optional: keep the program running
 while True:
     # Add your control logic here or interface with input   
     # set_servo_angle
-    set_servo_angle(6,0)
-    time.sleep(1)
-    set_servo_angle(6,10)
-    time.sleep(1)
-    set_servo_angle(6,20)
-    time.sleep(1)
-    set_servo_angle(6,30)
-    time.sleep(1)
-    set_servo_angle(6,40)
+    # set_servo_angle(6,0)
+    # time.sleep(1)
+    # set_servo_angle(6,10)
+    # time.sleep(1)
+    # set_servo_angle(6,20)
+    # time.sleep(1)
+    # set_servo_angle(6,30)
+    # time.sleep(1)
+    # set_servo_angle(6,40)
