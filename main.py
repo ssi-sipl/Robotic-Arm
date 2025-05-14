@@ -54,4 +54,6 @@ while True:
     # time.sleep(1)
     # set_servo_angle(6,40)
 
-    set_servo_angle(5, 40)
+    # set_servo_angle(5, 40)
+
+    kit.servo[15].angle = 40
