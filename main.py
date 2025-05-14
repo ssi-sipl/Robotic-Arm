@@ -18,6 +18,7 @@ def set_servo_angle(index, angle):
     channel = 9 + index  # so index 1 maps to channel 10, 2 → 11 ... 6 → 15
 
     # Handle mirrored movement for servo index 5 (like in your Arduino code)
+    angle = set_max_limits(index,angle)
     if index == 5:
         kit.servo[channel].angle = angle
         # kit.servo[15].angle = 180 - angle  # index 6 → channel 15
@@ -26,7 +27,13 @@ def set_servo_angle(index, angle):
 
     print(f"Moved servo {index} (channel {channel}) to {angle}°")
 
-# def set_max_limits(index, angle):
+def set_max_limits(index, angle):
+    if index==6:
+        if angle>=90:
+            exit()
+
+    return angle
+            
     
 
 # Example usage
