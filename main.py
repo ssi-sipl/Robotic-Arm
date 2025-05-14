@@ -54,13 +54,15 @@ safe_angles = {
     
 #     time.sleep(0.3)  # Small delay between each servo
             
-for i in range(10,80,10):
+for i in range(10,180,10):
     print("Moving Forward at ",i)
     kit.servo[14].angle = i
-    
-for i in range(80,10,-10):
+    time.sleep(1)
+
+for i in range(180,10,-10):
     print("Moving Backward at ",i)
     kit.servo[14].angle = i
+    time.sleep(1)
 
 
 # Example usage
