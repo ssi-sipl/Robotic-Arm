@@ -44,5 +44,12 @@ set_servo_angle(6, 70)  # Will move servo 5 and mirror 6
 while True:
     # Add your control logic here or interface with input   
     # set_servo_angle
-    
+    set_servo_angle(6,0)
     time.sleep(1)
+    set_servo_angle(6,10)
+    time.sleep(1)
+    set_servo_angle(6,20)
+    time.sleep(1)
+    set_servo_angle(6,30)
+    time.sleep(1)
+    set_servo_angle(6,40)
