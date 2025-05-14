@@ -40,7 +40,7 @@ safe_angles = {
     # 12: 60,  # Elbow
     # 14: 30,  # Wrist Pitch
     # 13: 30,  # Wrist Roll
-    15: 0    # Gripper
+    15: 30    # Gripper
 }
 
 # Set custom ranges if needed
