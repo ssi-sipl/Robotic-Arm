@@ -56,7 +56,7 @@ safe_angles = {
             
 
 kit.servo[15].set_pulse_width_range(min_pulse=600, max_pulse=2400)
-kit.servo[15].angle = 70
+kit.servo[14].angle = 30
 
 # Example usage
 # set_servo_angle(1, 90)
