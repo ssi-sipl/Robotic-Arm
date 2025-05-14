@@ -80,6 +80,10 @@ kit.servo[13].angle = 0
 
 time.sleep(2)
 
+kit.servo[12].angle = 0
+time.sleep(2)
+kit.servo[12].angle = 45
+time.sleep(2)
 kit.servo[12].angle = 90
 
 # for i in range(10,170,10):
