@@ -55,7 +55,7 @@ safe_angles = {
 #     time.sleep(0.3)  # Small delay between each servo
             
 
-kit.servo[0].set_pulse_width_range(min_pulse=600, max_pulse=2400)
+kit.servo[15].set_pulse_width_range(min_pulse=600, max_pulse=2400)
 kit.servo[15].angle = 70
 
 # Example usage
