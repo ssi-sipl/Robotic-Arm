@@ -63,7 +63,7 @@ for i in range(50,160,10):
     kit.servo[14].angle = i
     time.sleep(1)
 
-for i in range(160,50,-10):
+for i in range(160,40,-10):
     print("Moving Down at ",i)
     kit.servo[14].angle = i
     time.sleep(1)
