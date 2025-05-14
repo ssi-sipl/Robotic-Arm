@@ -33,6 +33,25 @@ def set_max_limits(index, angle):
             exit()
 
     return angle
+
+safe_angles = {
+    10: 45,  # Base (example)
+    11: 60,  # Shoulder
+    12: 60,  # Elbow
+    14: 30,  # Wrist Pitch
+    13: 30,  # Wrist Roll
+    15: 0    # Gripper
+}
+
+# Set custom ranges if needed
+for ch in safe_angles:
+    kit.servo[ch].set_pulse_width_range(600, 2100)
+
+# Gradually move each servo
+for ch, angle in safe_angles.items():
+    print(f"Initializing servo {ch} to {angle}°")
+    kit.servo[ch].angle = angle
+    time.sleep(0.3)  # Small delay between each servo
             
     
 
