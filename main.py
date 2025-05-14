@@ -54,7 +54,8 @@ safe_angles = {
     
 #     time.sleep(0.3)  # Small delay between each servo
 
-kit.servo[14].angle = 95
+print("Initial 160")
+kit.servo[14].angle = 160
 
 time.sleep(2)
 
