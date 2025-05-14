@@ -89,15 +89,15 @@ time.sleep(2)
 # kit.servo[12].angle = 90
 # print("Servo 3 at 90")
 
-for i in range(50,100,10):
+for i in range(10,120,10):
     print("Moving Up at ",i) 
     kit.servo[12].angle = i
     time.sleep(1)
 
-for i in range(90,40,-10):
-    print("Moving Down at ",i)
-    kit.servo[12].angle = i
-    time.sleep(1)
+# for i in range(90,40,-10):
+#     print("Moving Down at ",i)
+#     kit.servo[12].angle = i
+#     time.sleep(1)
 
 
 
