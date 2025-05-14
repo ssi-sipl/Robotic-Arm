@@ -80,7 +80,7 @@ kit.servo[13].angle = 0
 
 time.sleep(2)
 
-kit.servo[12].angle = 0
+kit.servo[12].angle = 90
 
 # for i in range(10,170,10):
 #     print("Moving Up at ",i) 
