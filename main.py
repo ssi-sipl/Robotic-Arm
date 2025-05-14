@@ -43,17 +43,20 @@ safe_angles = {
     15: 30    # Gripper
 }
 
-# Set custom ranges if needed
-for ch in safe_angles:
-    kit.servo[ch].set_pulse_width_range(600, 2100)
+# # Set custom ranges if needed
+# for ch in safe_angles:
+#     kit.servo[ch].set_pulse_width_range(600, 2100)
 
-# Gradually move each servo
-for ch, angle in safe_angles.items():
-    print(f"Initializing servo {ch} to {angle}°")
-    kit.servo[ch].angle = angle
-    time.sleep(0.3)  # Small delay between each servo
-            
+# # Gradually move each servo
+# for ch, angle in safe_angles.items():
+#     print(f"Initializing servo {ch} to {angle}°")
+#     kit.servo[ch].angle = angle
     
+#     time.sleep(0.3)  # Small delay between each servo
+            
+
+kit.servo[0].set_pulse_width_range(min_pulse=600, max_pulse=2400)
+kit.servo[15].angle = 70
 
 # Example usage
 # set_servo_angle(1, 90)
