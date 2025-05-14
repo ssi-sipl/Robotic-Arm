@@ -70,7 +70,7 @@ safe_angles = {
 #     kit.servo[14].angle = i
 #     time.sleep(1)
 
-print("Initial 160")
+print("Servo 5 at 160")
 kit.servo[14].angle = 160
 
 time.sleep(2)
