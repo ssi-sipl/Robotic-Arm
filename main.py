@@ -35,11 +35,11 @@ def set_max_limits(index, angle):
     return angle
 
 safe_angles = {
-    10: 45,  # Base (example)
-    11: 60,  # Shoulder
-    12: 60,  # Elbow
-    14: 30,  # Wrist Pitch
-    13: 30,  # Wrist Roll
+    # 10: 45,  # Base (example)
+    # 11: 60,  # Shoulder
+    # 12: 60,  # Elbow
+    # 14: 30,  # Wrist Pitch
+    # 13: 30,  # Wrist Roll
     15: 0    # Gripper
 }
 
