@@ -94,7 +94,8 @@ time.sleep(2)
 #     kit.servo[12].angle = i
 #     time.sleep(1)
 
-kit.servo[12].angle = 110
+kit.servo[12].angle = 90
+print("Servo 3 at ")
 
 
 # for i in range(120,40,-10):
