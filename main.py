@@ -54,20 +54,37 @@ safe_angles = {
     
 #     time.sleep(0.3)  # Small delay between each servo
 
-print("Initial 160")
-kit.servo[14].angle = 160
+# Motor - 5
+# print("Initial 160")
+# kit.servo[14].angle = 160
+
+# time.sleep(2)
+
+# for i in range(50,160,10):
+#     print("Moving Up at ",i) 
+#     kit.servo[14].angle = i
+#     time.sleep(1)
+
+# for i in range(160,40,-10):
+#     print("Moving Down at ",i)
+#     kit.servo[14].angle = i
+#     time.sleep(1)
+
+# print("Initial 160")
+# kit.servo[14].angle = 160
 
 time.sleep(2)
 
-for i in range(50,160,10):
+for i in range(10,80,10):
     print("Moving Up at ",i) 
-    kit.servo[14].angle = i
+    kit.servo[13].angle = i
     time.sleep(1)
 
-for i in range(160,40,-10):
+for i in range(10,90,-10):
     print("Moving Down at ",i)
-    kit.servo[14].angle = i
+    kit.servo[13].angle = i
     time.sleep(1)
+
 
 
 # Example usage
