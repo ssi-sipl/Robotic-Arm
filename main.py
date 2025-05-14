@@ -75,4 +75,4 @@ while True:
 
     # set_servo_angle(5, 40)
 
-    kit.servo[15].angle = 30
+    # kit.servo[15].angle = 30
