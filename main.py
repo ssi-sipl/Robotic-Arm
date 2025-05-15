@@ -46,11 +46,11 @@ def set_servo_angle(index, angle):
 # kit.servo[15].angle = 90
 # time.sleep(0.5)
 
-kit.servo[10].angle = 90
+kit.servo[11].angle = 90
 time.sleep(0.5)
-kit.servo[10].angle = 180
+kit.servo[11].angle = 180
 time.sleep(0.5)
-kit.servo[10].angle = 90
+kit.servo[11].angle = 90
 time.sleep(0.5)
 
 # kit.continuous_servo[11].set_pulse_width_range(min_pulse=990, max_pulse=2010)
