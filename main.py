@@ -94,7 +94,8 @@ safe_angles = {
 #     kit.servo[12].angle = i
 #     time.sleep(1)
 
-kit.servo[10].angle = 0
+kit.servo[10].angle = 50
+
 
 while True:
     pass
