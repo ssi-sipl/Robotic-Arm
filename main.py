@@ -1,8 +1,12 @@
 from adafruit_servokit import ServoKit
 import time
+import json
 
 # Initialize PCA9685 with 16 channels
 kit = ServoKit(channels=16)
+
+with open('./config.json', 'r') as config_file:
+    config = json.load(config_file)
 
 def set_servo_angle(index, angle):
     """
@@ -18,7 +22,7 @@ def set_servo_angle(index, angle):
     channel = 9 + index  # so index 1 maps to channel 10, 2 → 11 ... 6 → 15
 
     # Handle mirrored movement for servo index 5 (like in your Arduino code)
-    angle = set_max_limits(index,angle)
+    # angle = set_max_limits(index,angle)
     if index == 5:
         kit.servo[channel].angle = angle
         # kit.servo[15].angle = 180 - angle  # index 6 → channel 15
@@ -27,135 +31,10 @@ def set_servo_angle(index, angle):
 
     print(f"Moved servo {index} (channel {channel}) to {angle}°")
 
-def set_max_limits(index, angle):
-    if index==6:
-        if angle>=90:
-            exit()
-
-    return angle
-
-safe_angles = {
-    # 10: 45,  # Base (example)
-    # 11: 60,  # Shoulder
-    # 12: 60,  # Elbow
-    # 14: 30,  # Wrist Pitch
-    # 13: 30,  # Wrist Roll
-    15: 30    # Gripper
-}
-
-# # Set custom ranges if needed
-# for ch in safe_angles:
-#     kit.servo[ch].set_pulse_width_range(600, 2100)
-
-# # Gradually move each servo
-# for ch, angle in safe_angles.items():
-#     print(f"Initializing servo {ch} to {angle}°")
-#     kit.servo[ch].angle = angle
+def initial_positions():
+    for key, value in config.items():
+        print(f"{key}: {value}")
     
-#     time.sleep(0.3)  # Small delay between each servo
+        kit.servo[int(key)].angle = value.get('initial')
 
-# Motor - 5
-# print("Initial 160")
-# kit.servo[14].angle = 160
-
-# time.sleep(2)
-
-# for i in range(50,160,10):
-#     print("Moving Up at ",i) 
-#     kit.servo[14].angle = i
-#     time.sleep(1)
-
-# for i in range(160,40,-10):
-#     print("Moving Down at ",i)
-#     kit.servo[14].angle = i
-#     time.sleep(1)
-
-# print("Servo 5 at 160")
-# kit.servo[14].angle = 80
-
-# time.sleep(2)
-
-# print("Servo 4 at 0")
-# kit.servo[13].angle = 0
-
-# time.sleep(2)
-
-# kit.servo[12].angle = 0
-# print("Servo 3 at 0")
-# time.sleep(2)
-# kit.servo[12].angle = 45
-# print("Servo 3 at 45")
-# time.sleep(2)
-# kit.servo[12].angle = 90
-# print("Servo 3 at 90")
-
-# kit.servo[15].angle = 180 close
-
-for i in range(90,190,10):
-    print("Moving Up at ",i) 
-    kit.servo[15].angle = i
-    time.sleep(1)
-
-for i in range(180,80,-10):
-    print("Moving Down at ",i)
-    kit.servo[15].angle = i
-    time.sleep(1)
-
-
-# kit.servo[10].angle = 90
-# print("Servo 1 at 90")
-# time.sleep(2)
-
-# Go to one end
-# kit.servo[15].angle = 0
-# print("Servo 1 at 0")
-# time.sleep(2)
-
-# # Go to the other end
-# kit.servo[15].angle = 120
-# print("Servo 1 at 120")
-# time.sleep(2)
-
-# # Back to center
-# kit.servo[15].angle = 90
-# print("Servo 1 at 90")
-
-# kit.continuous_servo[10].throttle = 1.0   # Full speed CW
-# print("Servo 1 at 1.0 left")
-# time.sleep(2)
-# kit.continuous_servo[10].throttle = -1.0  # Full speed CCW
-# print("Servo 1 at -1.0 right ")
-# time.sleep(2)
-# kit.continuous_servo[10].throttle = 0     # Stop
-# print("Servo 1 at 0 stop")
-
-
-# for i in range(120,40,-10):
-#     print("Moving Down at ",i)
-#     kit.servo[12].angle = i
-#     time.sleep(1)
-
-
-
-# Example usage
-# set_servo_angle(1, 90)
-# set_servo_angle(5, 0)  # Will move servo 5 and mirror 6
-
-# Optional: keep the program running
-while True:
-    # Add your control logic here or interface with input   
-    # set_servo_angle
-    # set_servo_angle(6,0)
-    # time.sleep(1)
-    # set_servo_angle(6,10)
-    # time.sleep(1)
-    # set_servo_angle(6,20)
-    # time.sleep(1)
-    # set_servo_angle(6,30)
-    # time.sleep(1)
-    # set_servo_angle(6,40)
-
-    # set_servo_angle(5, 40)
-
-    # kit.servo[15].angle = 30
-    pass
+initial_positions()
