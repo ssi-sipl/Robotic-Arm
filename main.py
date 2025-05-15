@@ -60,7 +60,7 @@ time.sleep(2)
 kit.servo[10].angle = 180
 print("Servo 10 set to 180 degrees")
 time.sleep(2)
-kit.servo[10].angle = 90
+kit.servo[10].angle = 0
 print("Servo 10 set to 90 degrees")
 time.sleep(2)
 
