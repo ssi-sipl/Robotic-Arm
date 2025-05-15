@@ -63,12 +63,12 @@ def set_servo_angle(index, angle):
 while True:
 
     # # Full speed clockwise
-    kit.continuous_servo[11].throttle = 1.0
+    kit.continuous_servo[11].throttle = 1
     time.sleep(2)
 
     # Full speed counter-clockwise
-    kit.continuous_servo[11].throttle = -1.0
+    kit.continuous_servo[11].throttle = -1
     time.sleep(2)
 
     # Stop (may need tuning, see note below)
-    kit.continuous_servo[11].throttle = 0.0
+    kit.continuous_servo[11].throttle = 0
