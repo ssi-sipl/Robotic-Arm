@@ -49,4 +49,4 @@ def set_servo_angle(index, angle):
 kit.continuous_servo[10].set_pulse_width_range(min_pulse=990, max_pulse=2010)
 
 # Set throttle to 0 to stop the motor at startup
-kit.continuous_servo[10].throttle = 0.0
+kit.continuous_servo[10].throttle = 1
