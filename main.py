@@ -54,29 +54,29 @@ initial_positions()
 # time.sleep(2)
 
 
-# kit.servo[10].angle = 90
-# print("Servo 10 set to 90 degrees")
-# time.sleep(2)
-# kit.servo[10].angle = 180
-# print("Servo 10 set to 180 degrees")
-# time.sleep(2)
-# kit.servo[10].angle = 0
-# print("Servo 10 set to 90 degrees")
-# time.sleep(2)
+kit.servo[10].angle = 90
+print("Servo 10 set to 90 degrees")
+time.sleep(2)
+kit.servo[10].angle = 180
+print("Servo 10 set to 180 degrees")
+time.sleep(2)
+kit.servo[10].angle = 0
+print("Servo 10 set to 90 degrees")
+time.sleep(2)
 
 # kit.continuous_servo[10].set_pulse_width_range(min_pulse=1000, max_pulse=2000)
 
-print("Spinning forward")
-kit.continuous_servo[11].throttle = 1
-time.sleep(2)
+# print("Spinning forward")
+# kit.continuous_servo[11].throttle = 1
+# time.sleep(2)
 
-print("Spinning backward")
-kit.continuous_servo[11].throttle = -1
-time.sleep(2)
+# print("Spinning backward")
+# kit.continuous_servo[11].throttle = -1
+# time.sleep(2)
 
-print("Stopping")
-kit.continuous_servo[11].throttle = 0
-time.sleep(2)
+# print("Stopping")
+# kit.continuous_servo[11].throttle = 0
+# time.sleep(2)
 
 # kit.continuous_servo[11].set_pulse_width_range(min_pulse=990, max_pulse=2010)
 
