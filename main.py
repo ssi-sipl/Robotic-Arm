@@ -113,13 +113,13 @@ safe_angles = {
 # print("Servo 1 at 90")
 
 kit.continuous_servo[10].throttle = 1.0   # Full speed CW
-print("Servo 1 at 1.0")
+print("Servo 1 at 1.0 right")
 time.sleep(2)
 kit.continuous_servo[10].throttle = -1.0  # Full speed CCW
-print("Servo 1 at -1.0")
+print("Servo 1 at -1.0 left ")
 time.sleep(2)
 kit.continuous_servo[10].throttle = 0     # Stop
-print("Servo 1 at 0")
+print("Servo 1 at 0 stop")
 
 
 # for i in range(120,40,-10):
