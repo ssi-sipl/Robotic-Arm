@@ -1,7 +1,7 @@
 {
      "15":{
         "name":"Servo 6",
-        "initial":"90",
+        "initial":90,
         "min":90,
         "max":180,
         "close": "90-180",
@@ -10,7 +10,7 @@
     },
     "14":{
         "name":"Servo 5",
-        "initial":"160",
+        "initial":160,
         "min":50,
         "max":160,
         "up": "50-160",
@@ -19,7 +19,7 @@
     },
     "13":{
         "name":"Servo 4",
-        "initial":"0",
+        "initial":0,
         "min":0,
         "max":160,
         "right": "0-160",
