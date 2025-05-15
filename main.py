@@ -33,8 +33,6 @@ def set_servo_angle(index, angle):
 
 def initial_positions():
     for key, value in config.items():
-        print(f"{key}: {value}")
-    
         kit.servo[int(key)].angle = value.get('initial')
 
 initial_positions()
