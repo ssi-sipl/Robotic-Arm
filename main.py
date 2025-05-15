@@ -94,9 +94,11 @@ safe_angles = {
 #     kit.servo[12].angle = i
 #     time.sleep(1)
 
+kit.servo[10].angle = 0
+
 while True:
-    kit.servo[10].angle = 0
-    print("Servo 1 at ")
+    pass
+    # print("Servo 1 at ")
 
 # for i in range(120,40,-10):
 #     print("Moving Down at ",i)
