@@ -38,3 +38,12 @@ def initial_positions():
         kit.servo[int(key)].angle = value.get('initial')
 
 initial_positions()
+
+kit.servo[15].angle = 180
+time.sleep(0.5)
+kit.servo[15].angle = 160
+time.sleep(0.5)
+kit.servo[15].angle = 180
+time.sleep(0.5)
+kit.servo[15].angle = 90
+time.sleep(0.5)
