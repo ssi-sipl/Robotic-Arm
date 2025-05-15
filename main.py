@@ -37,12 +37,12 @@ def initial_positions():
 
 initial_positions()
 
-# kit.servo[15].angle = 90
-# time.sleep(0.5)
-# kit.servo[15].angle = 180
-# time.sleep(0.5)
-# kit.servo[15].angle = 90
-# time.sleep(0.5)
+kit.servo[15].angle = 90
+time.sleep(0.5)
+kit.servo[15].angle = 180
+time.sleep(0.5)
+kit.servo[15].angle = 90
+time.sleep(0.5)
 
 # kit.continuous_servo[11].throttle = 1
 # time.sleep(2)
