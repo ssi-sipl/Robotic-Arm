@@ -31,13 +31,13 @@ def set_servo_angle(index, angle):
 
     print(f"Moved servo {index} (channel {channel}) to {angle}°")
 
-# def initial_positions():
-#     for key, value in config.items():
-#         print(f"{key}: {value}")
+def initial_positions():
+    for key, value in config.items():
+        print(f"{key}: {value}")
     
-#         kit.servo[int(key)].angle = value.get('initial')
+        kit.servo[int(key)].angle = value.get('initial')
 
-# initial_positions()
+initial_positions()
 
 # kit.servo[15].angle = 90
 # time.sleep(0.5)
