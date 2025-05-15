@@ -64,7 +64,7 @@ def set_servo_angle(index, angle):
 # print("Servo 10 set to 90 degrees")
 # time.sleep(2)
 
-kit.continuous_servo[10].set_pulse_width_range(min_pulse=990, max_pulse=2010)
+kit.continuous_servo[10].set_pulse_width_range(min_pulse=1000, max_pulse=2000)
 
 print("Spinning forward")
 kit.continuous_servo[10].throttle = 1.0
