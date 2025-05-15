@@ -54,14 +54,14 @@ initial_positions()
 # time.sleep(2)
 
 
-kit.servo[10].angle = 90
-print("Servo 10 set to 90 degrees")
+kit.servo[11].angle = 90
+print("Servo 11 set to 90 degrees")
 time.sleep(2)
-kit.servo[10].angle = 180
-print("Servo 10 set to 180 degrees")
+kit.servo[11].angle = 180
+print("Servo 11 set to 180 degrees")
 time.sleep(2)
-kit.servo[10].angle = 0
-print("Servo 10 set to 90 degrees")
+kit.servo[11].angle = 0
+print("Servo 11 set to 90 degrees")
 time.sleep(2)
 
 # kit.continuous_servo[10].set_pulse_width_range(min_pulse=1000, max_pulse=2000)
