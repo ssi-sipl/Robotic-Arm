@@ -67,15 +67,15 @@ initial_positions()
 # kit.continuous_servo[10].set_pulse_width_range(min_pulse=1000, max_pulse=2000)
 
 print("Spinning forward")
-kit.continuous_servo[10].throttle = 1.0
+kit.continuous_servo[10].throttle = 1
 time.sleep(2)
 
 print("Spinning backward")
-kit.continuous_servo[10].throttle = -1.0
+kit.continuous_servo[10].throttle = -1
 time.sleep(2)
 
 print("Stopping")
-kit.continuous_servo[10].throttle = -0.02
+kit.continuous_servo[10].throttle = 0
 time.sleep(2)
 
 # kit.continuous_servo[11].set_pulse_width_range(min_pulse=990, max_pulse=2010)
