@@ -46,20 +46,27 @@ def set_servo_angle(index, angle):
 # kit.servo[15].angle = 90
 # time.sleep(0.5)
 
-kit.continuous_servo[11].set_pulse_width_range(min_pulse=990, max_pulse=2010)
+kit.servo[10].angle = 90
+time.sleep(0.5)
+kit.servo[10].angle = 180
+time.sleep(0.5)
+kit.servo[10].angle = 90
+time.sleep(0.5)
 
-# Set throttle to 0 to stop the motor at startup
-kit.continuous_servo[11].throttle = 0.0
+# kit.continuous_servo[11].set_pulse_width_range(min_pulse=990, max_pulse=2010)
 
-kit.continuous_servo[10].set_pulse_width_range(min_pulse=990, max_pulse=2010)
+# # Set throttle to 0 to stop the motor at startup
+# kit.continuous_servo[11].throttle = 0.0
 
-# Full speed clockwise
-kit.continuous_servo[10].throttle = 1.0
-time.sleep(2)
+# kit.continuous_servo[10].set_pulse_width_range(min_pulse=990, max_pulse=2010)
 
-# Full speed counter-clockwise
-kit.continuous_servo[10].throttle = -1.0
-time.sleep(2)
+# # Full speed clockwise
+# kit.continuous_servo[10].throttle = 1.0
+# time.sleep(2)
 
-# Stop (may need tuning, see note below)
-kit.continuous_servo[10].throttle = 0.0
+# # Full speed counter-clockwise
+# kit.continuous_servo[10].throttle = -1.0
+# time.sleep(2)
+
+# # Stop (may need tuning, see note below)
+# kit.continuous_servo[10].throttle = 0.0
