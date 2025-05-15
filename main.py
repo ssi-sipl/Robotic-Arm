@@ -31,17 +31,22 @@ def set_servo_angle(index, angle):
 
     print(f"Moved servo {index} (channel {channel}) to {angle}°")
 
-def initial_positions():
-    for key, value in config.items():
-        print(f"{key}: {value}")
+# def initial_positions():
+#     for key, value in config.items():
+#         print(f"{key}: {value}")
     
-        kit.servo[int(key)].angle = value.get('initial')
+#         kit.servo[int(key)].angle = value.get('initial')
 
-initial_positions()
+# initial_positions()
 
-kit.servo[15].angle = 90
-time.sleep(0.5)
-kit.servo[15].angle = 180
-time.sleep(0.5)
-kit.servo[15].angle = 90
-time.sleep(0.5)
+# kit.servo[15].angle = 90
+# time.sleep(0.5)
+# kit.servo[15].angle = 180
+# time.sleep(0.5)
+# kit.servo[15].angle = 90
+# time.sleep(0.5)
+
+kit.continuous_servo[10].set_pulse_width_range(min_pulse=990, max_pulse=2010)
+
+# Set throttle to 0 to stop the motor at startup
+kit.continuous_servo[10].throttle = 0.0
