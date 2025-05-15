@@ -53,5 +53,13 @@ kit.continuous_servo[11].throttle = 0.0
 
 kit.continuous_servo[10].set_pulse_width_range(min_pulse=990, max_pulse=2010)
 
-# Set throttle to 0 to stop the motor at startup
-kit.continuous_servo[10].throttle = 1
+# Full speed clockwise
+kit.continuous_servo[10].throttle = 1.0
+time.sleep(2)
+
+# Full speed counter-clockwise
+kit.continuous_servo[10].throttle = -1.0
+time.sleep(2)
+
+# Stop (may need tuning, see note below)
+kit.continuous_servo[10].throttle = 0.0
