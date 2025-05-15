@@ -99,17 +99,17 @@ safe_angles = {
 # time.sleep(2)
 
 # Go to one end
-kit.servo[11].angle = 0
+kit.servo[15].angle = 0
 print("Servo 1 at 0")
 time.sleep(2)
 
 # Go to the other end
-kit.servo[11].angle = 120
+kit.servo[15].angle = 120
 print("Servo 1 at 120")
 time.sleep(2)
 
 # Back to center
-kit.servo[11].angle = 90
+kit.servo[15].angle = 90
 print("Servo 1 at 90")
 
 # kit.continuous_servo[10].throttle = 1.0   # Full speed CW
