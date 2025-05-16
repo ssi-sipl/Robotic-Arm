@@ -1,6 +1,6 @@
 {
      "15":{
-        "name":"CLAW (Servo 6)",
+        "name":"GRIPPER (Servo 6)",
         "initial":90,
         "min":90,
         "max":180,
@@ -9,7 +9,7 @@
 
     },
     "14":{
-        "name":"WRIST YAW (Servo 5)",
+        "name":"WRIST PITCH (Servo 5)",
         "initial":50,
         "min":50,
         "max":160,
@@ -27,7 +27,7 @@
 
     },
     "12":{
-        "name":"FOREARM (Servo 3)",
+        "name":"ELBOW (Servo 3)",
         "initial":140,
         "min":10,
         "max":160,
@@ -35,12 +35,19 @@
         "down": "160-0"
     },
     "11":{
-        "name":"ARM (Servo 2)",
+        "name":"SHOULDER (Servo 2)",
         "initial":100,
         "min":90,
         "max":170,
         "up": "170-100",
         "down": "100-190"
-
+    },
+    "10":{
+        "name":"BASE (Servo 1)",
+        "initial":100,
+        "min":90,
+        "max":170,
+        "up": "170-100",
+        "down": "100-190"
     }
 }
