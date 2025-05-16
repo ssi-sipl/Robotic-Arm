@@ -8,35 +8,10 @@ kit = ServoKit(channels=16)
 with open('./config.json', 'r') as config_file:
     config = json.load(config_file)
 
-def set_servo_angle(index, angle):
-    """
-    Maps your logical servo index (1 to 6) to PCA9685 channels (10 to 15)
-    and moves the servo to the given angle.
-    """
-    # Validate input
-    if index < 1 or index > 6 or angle < 0 or angle > 180:
-        print("Invalid servo index or angle")
-        return
-
-    # Map servo index 1-6 to PCA9685 channels 10-15
-    channel = 9 + index  # so index 1 maps to channel 10, 2 → 11 ... 6 → 15
-
-    # Handle mirrored movement for servo index 5 (like in your Arduino code)
-    # angle = set_max_limits(index,angle)
-    if index == 5:
-        kit.servo[channel].angle = angle
-        # kit.servo[15].angle = 180 - angle  # index 6 → channel 15
-    else:
-        kit.servo[channel].angle = angle
-
-    print(f"Moved servo {index} (channel {channel}) to {angle}°")
-
 def initial_positions():
     for key, value in config.items():
         kit.servo[int(key)].angle = value.get('initial')
-
-
-
+ 
 def starting_animation():
     kit.servo[15].angle = 90
     time.sleep(0.5)
