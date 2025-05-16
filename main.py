@@ -47,14 +47,15 @@ def starting_animation():
 
 initial_positions()
 starting_animation()
-# for i in range(20, 170,10):
-#     kit.servo[12].angle = i 
-#     print(f"Servo 12 set to {i} degrees")
-#     time.sleep(1)
-# for i in range(160, 10,-10):
-#     kit.servo[12].angle = i 
-#     print(f"Servo 12 set to {i} degrees")
-#     time.sleep(1)
+
+for i in range(50, 170,10):
+    kit.servo[11].angle = i 
+    print(f"Servo 11 set to {i} degrees")
+    time.sleep(1)
+for i in range(160, 40,-10):
+    kit.servo[11].angle = i 
+    print(f"Servo 11 set to {i} degrees")
+    time.sleep(1)
 
 # kit.continuous_servo[11].throttle = 1
 # time.sleep(2)

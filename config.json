@@ -28,7 +28,7 @@
     },
     "12":{
         "name":"Servo 3",
-        "initial":10,
+        "initial":160,
         "min":10,
         "max":160,
         "up": "0-160",
