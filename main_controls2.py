@@ -22,9 +22,16 @@ def get_key():
     old = termios.tcgetattr(fd)
     try:
         tty.setraw(fd)
-        return sys.stdin.read(3)
+        ch1 = sys.stdin.read(1)
+        if ch1 == '\x1b':
+            ch2 = sys.stdin.read(1)
+            ch3 = sys.stdin.read(1)
+            return ch1 + ch2 + ch3  # e.g., '\x1b[A'
+        else:
+            return ch1  # e.g., 'q' or 'b'
     finally:
         termios.tcsetattr(fd, termios.TCSADRAIN, old)
+
 
 def print_angle_bar(channel):
     angle = angles[channel]
