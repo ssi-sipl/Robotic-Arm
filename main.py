@@ -45,11 +45,11 @@ def starting_animation():
     kit.servo[15].angle = 90
     time.sleep(0.5)
 
-for i in range(10, 80,10):
+for i in range(20, 170,10):
     kit.servo[12].angle = i 
     print(f"Servo 12 set to {i} degrees")
     time.sleep(1)
-for i in range(80, 0,-10):
+for i in range(160, 10,-10):
     kit.servo[12].angle = i 
     print(f"Servo 12 set to {i} degrees")
     time.sleep(1)
