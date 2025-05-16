@@ -59,7 +59,7 @@ while True:
 
     min_angle = config[str(selected_ch)]["min"]
     max_angle = config[str(selected_ch)]["max"]
-    step = 5
+    step = 1
 
     print(f"\nControlling Servo {selected_ch} ({config[str(selected_ch)]['name']})")
     print("Use UP and DOWN arrows to move. Press 'b' to go back. Press 'q' to quit.")
@@ -71,15 +71,20 @@ while True:
             if angles[selected_ch] + step <= max_angle:
                 angles[selected_ch] += step
                 kit.servo[selected_ch].angle = angles[selected_ch]
+                continue
             else:
                 print(f"Max angle {max_angle}° reached.")
+                continue
 
         elif key == '\x1b[B':  # DOWN arrow
             if angles[selected_ch] - step >= min_angle:
                 angles[selected_ch] -= step
                 kit.servo[selected_ch].angle = angles[selected_ch]
+                continue
+
             else:
                 print(f"Min angle {min_angle}° reached.")
+                continue
 
         elif key == 'b':
             break
