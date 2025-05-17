@@ -10,24 +10,6 @@ import time
 # Initialize PCA9685 with 16 channels
 kit = ServoKit(channels=16)
 
-with open('./config.json', 'r') as config_file:
-    config = json.load(config_file)
-
-def initial_positions():
-    for key, value in config.items():
-        kit.servo[int(key)].angle = value.get('initial')
- 
-def starting_animation():
-    kit.servo[15].angle = 90
-    time.sleep(0.5)
-    kit.servo[15].angle = 180
-    time.sleep(0.5)
-    kit.servo[15].angle = 90
-    time.sleep(0.5)
-
-initial_positions()
-starting_animation()
-
 
 # Define the robot arm using URDFLink with correct argument names
 my_chain = Chain(name='vinith_robot_arm', links=[
@@ -68,22 +50,20 @@ my_chain = Chain(name='vinith_robot_arm', links=[
     )
 ])
 
-# Define the target position [x, y, z] in meters
-target_position = [0.1, 0.05, 0.1]
+with open('./config.json', 'r') as config_file:
+    config = json.load(config_file)
 
-# Create a transformation matrix for the target position
-target_frame = np.eye(4)
-target_frame[:3, 3] = target_position
-
-# Solve inverse kinematics
-# ik_solution = my_chain.inverse_kinematics(target_frame)
-ik_solution = my_chain.inverse_kinematics(target_position)
-ik_solution_degrees = np.degrees(ik_solution)
-
-
-# Print the result
-print("Joint angles in radians:", ik_solution)
-print("Joint angles in degress:", ik_solution_degrees)
+def initial_positions():
+    for key, value in config.items():
+        kit.servo[int(key)].angle = value.get('initial')
+ 
+def starting_animation():
+    kit.servo[15].angle = 90
+    time.sleep(0.5)
+    kit.servo[15].angle = 180
+    time.sleep(0.5)
+    kit.servo[15].angle = 90
+    time.sleep(0.5)
 
 def ik_to_servo_angle(ik_angle_deg, servo_min, servo_max, servo_initial):
     # Offset IK angles by adding the initial angle (neutral)
@@ -96,21 +76,37 @@ def ik_to_servo_angle(ik_angle_deg, servo_min, servo_max, servo_initial):
         servo_angle = servo_max
     return servo_angle
 
+def angle_to_servo_motion(x,y,z):
+    target_position = [x, y, z]
 
+    # Solve inverse kinematics
+    ik_solution = my_chain.inverse_kinematics(target_position)
+    ik_solution_degrees = np.degrees(ik_solution)
 
-count=0
-for key, value in config.items():
-    if key == '15':
-        continue
-    max= value.get('max')
-    min= value.get('min')   
-    initial= value.get('initial')
-    angle=ik_solution_degrees[::-1][count]
-    ik_angle=ik_to_servo_angle(angle, min, max, initial)
-    kit.servo[int(key)].angle = ik_angle
-    print(value.get('name'))
-    print(f"Servo {key} angle: {ik_angle}°")
+    print("Joint angles in radians:", ik_solution)
+    print("Joint angles in degress:", ik_solution_degrees)
 
-    count+=1
+    count=0
+    for key, value in config.items():
+        if key == '15':
+            continue
+        max= value.get('max')
+        min= value.get('min')   
+        initial= value.get('initial')
+        angle=ik_solution_degrees[::-1][count]
+        ik_angle=ik_to_servo_angle(angle, min, max, initial)
+        kit.servo[int(key)].angle = ik_angle
+        print(f"Servo {value.get('name')}({key}) angle: {ik_angle}°")
 
+        count+=1
 
+print("Starting initial positions and animation...")
+initial_positions()
+starting_animation()
+
+print("Add Coordinates to move the arm to the desired position:")
+x = float(input("X: "))
+y = float(input("Y: "))
+z = float(input("Z: "))
+
+angle_to_servo_motion(x,y,z)
