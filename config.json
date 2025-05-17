@@ -8,15 +8,6 @@
         "open": "180-90"
 
     },
-    "14":{
-        "name":"WRIST PITCH (Servo 5)",
-        "initial":50,
-        "min":50,
-        "max":160,
-        "up": "50-160",
-        "down": "160-50"
-
-    },
     "13":{
         "name":"WRIST ROLL (Servo 4)",
         "initial":0,
@@ -26,6 +17,15 @@
         "left": "160-0"
 
     },
+    "14":{
+        "name":"WRIST PITCH (Servo 5)",
+        "initial":50,
+        "min":50,
+        "max":160,
+        "up": "50-160",
+        "down": "160-50"
+
+    },         
     "12":{
         "name":"ELBOW (Servo 3)",
         "initial":140,

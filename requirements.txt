@@ -3,3 +3,6 @@ adafruit-circuitpython-pca9685
 adafruit-blinka
 adafruit-circuitpython-motor
 adafruit-circuitpython-servokit
+ikpy
+numpy
+matplotlib
