@@ -27,7 +27,7 @@ for i in range(0, 190, 10):
     kit.servo[11].angle = i
     print(f"Servo 11 angle: {i}")
     time.sleep(1)
-for i in range(180, 0, 10):
+for i in range(180, 0, -10):
     kit.servo[11].angle = i
     print(f"Servo 11 angle: {i}")
     time.sleep(1)
