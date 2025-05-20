@@ -24,12 +24,12 @@ kit = ServoKit(channels=16)
 # starting_animation()
 
 for i in range(0, 190, 10):
-    kit.servo[15].angle = i
-    print(f"Servo 15 angle: {i}")
+    kit.servo[10].angle = i
+    print(f"Servo 10 angle: {i}")
     time.sleep(1)
 for i in range(180, 0, -10):
-    kit.servo[15].angle = i
-    print(f"Servo 15 angle: {i}")
+    kit.servo[10].angle = i
+    print(f"Servo 10 angle: {i}")
     time.sleep(1)
 
 
